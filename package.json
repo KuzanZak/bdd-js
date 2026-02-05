@@ -1,0 +1,24 @@
+{
+  "name": "bdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KuzanZak/bdd-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/KuzanZak/bdd-js/issues"
+  },
+  "homepage": "https://github.com/KuzanZak/bdd-js#readme",
+  "dependencies": {
+    "mariadb": "^3.4.5"
+  }
+}
