@@ -54,6 +54,11 @@ const main = async () => {
     console.log(updatedCourse);
     console.log("\n");
 
+    console.log("Liste des étudiants participant au cours 1:");
+    const studentsInCourse = await Cours.getStudentsByLesson(1);
+    console.log(studentsInCourse);
+    console.log("\n");
+
     console.log("Opérations terminées avec succès!");
   } catch (error) {
     console.error("Erreur:", error.message);

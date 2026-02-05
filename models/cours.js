@@ -82,3 +82,24 @@ export const updateWeekNumber = async (id, weekNumber) => {
     connection?.release();
   }
 };
+
+export const getStudentsByLesson = async (lessonId) => {
+  let connection;
+  try {
+    connection = await getConnection();
+    const statement = await connection.prepare(
+      `SELECT e.etudiant_nom, e.etudiant_prenom
+       FROM etudiant e
+       JOIN assister a ON e.etudiant_id = a.etudiant_id
+       WHERE a.cours_id = ?
+       ORDER BY e.etudiant_nom ASC`
+    );
+    const rows = await statement.execute([lessonId]);
+    return rows;
+  } catch (error) {
+    console.error(`Erreur lors de la récupération des étudiants du cours ${lessonId}:`, error);
+    throw error;
+  } finally {
+    connection?.release();
+  }
+};
